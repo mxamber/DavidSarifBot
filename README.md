@@ -1,5 +1,5 @@
 # DavidSarifBot
-A lil twitter bot I made, working an \_ebooks idea into a roleplay account.
+A lil twitter bot I made, working an \_ebooks idea into a roleplay account. Live account can be found at [@DavidSarif](https://twitter.com/DavidSarif)
 
 ## The idea
 Inspired by several "ebooks"<sup>1</sup> accounts, I decided to create a similar account roleplaying as David Sarif from the popular Deus Ex: Human Revolution game. However, sticking with the roleplaying theme, I wanted this account to form sentences that actually make sense, or are at least grammatically correct.
