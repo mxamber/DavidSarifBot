@@ -30,4 +30,5 @@ Running the bot is pretty simple. After creating a directory to download it into
 
 ## Annotations
 <sup>1</sup> "ebooks" accounts, named after the [Horse_ebooks](https://en.wikipedia.org/wiki/Horse_ebooks) phenomenon, are bot accounts that randomly remix two or more sentences, resulting in odd gibberish sentences
+
 <sup>2</sup> uses quotes from Stephen Shellen's infamous "fruit flies" video
