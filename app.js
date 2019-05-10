@@ -1,7 +1,12 @@
 // require packages
 const fs = require('fs');
-const lo_random = require('lodash.random')
 const TwitterPackage = require('twitter');
+
+function int_rand(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min; // the maximum is exclusive and the minimum is inclusive
+}
 
 const randbool = Math.random() < 0.75; // returns bool: 25% true cases, 75% false cases
 const msconv = 60000; // multiply x minutes with msconv to get x in milliseconds
@@ -77,7 +82,7 @@ function hourly_tweet(){
 		var quotes = JSON.parse(data);
 		
 		
-		var twt_case = lo_random(1,10); // twt_case is between 1 and 10,
+		var twt_case = int_rand(1,11); // twt_case is between 1 and 10,
 		
 		if(parg.sanitiseArgInt(args.m) != false) {
 			var mode = parg.sanitiseArgInt(args.m);
@@ -102,17 +107,17 @@ function hourly_tweet(){
 		if(twt_case > 10 || twt_case < 0) {
 			bot_tweet("It would appear SOMEONE has messed with our software again... I'll fix that in a minute. --FP"); // if twt_case is SOMEHOW outside the 1-10 range (plus 0 for valentine), this tweet is sent
 		} else if(twt_case == 0) {
-			bot_tweet(quotes.valentine[lo_random(0,quotes.valentine.length-1)]);
+			bot_tweet(quotes.valentine[int_rand(0,quotes.valentine.length)]);
 		} else if(twt_case == 1) {
-			bot_tweet(quotes.bonkers[lo_random(0,quotes.bonkers.length-1)]);
+			bot_tweet(quotes.bonkers[int_rand(0,quotes.bonkers.length)]);
 		} else if (twt_case > 1 && twt_case < 6) {
-			bot_tweet(quotes.quotes[lo_random(0,quotes.quotes.length-1)]);
+			bot_tweet(quotes.quotes[int_rand(0,quotes.quotes.length)]);
 		} else if (twt_case > 5 && twt_case < 11) {
-			var quote1 = quotes.lecture.situation[lo_random(0,quotes.lecture.situation.length-1)];
-			var quote2 = quotes.lecture.directive[lo_random(0,quotes.lecture.directive.length-1)];
+			var quote1 = quotes.lecture.situation[int_rand(0,quotes.lecture.situation.length)];
+			var quote2 = quotes.lecture.directive[int_rand(0,quotes.lecture.directive.length)];
 			var quote = quote1 + " " + quote2;
 			if(randbool) {
-				var quote3 = quote + " " + quotes.lecture.mystery[lo_random(0,quotes.lecture.mystery.length-1)];
+				var quote3 = quote + " " + quotes.lecture.mystery[int_rand(0,quotes.lecture.mystery.length)];
 				if(quote3.length <= 280) {
 					quote = quote3;
 				}
