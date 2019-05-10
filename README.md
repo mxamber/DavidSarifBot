@@ -14,7 +14,7 @@ Besides the two files mentioned above, I included a small script I wrote called 
 Running the bot is pretty simple. After creating a directory to download it into and installing nodejs, run npm to install node-twitter (`npm install twitter`). Register an application with Twitter requesting read-write access (the process changed since I created my bot account but your request should be granted fairly quickly) and enter the credentials into your creds.json file (an example file with no credentials filled in is included with the repository). Run `node app.js <arguments>` from your shell, terminal or command line and you're done!
 
 ### command-line arguments
-* `-h`, -help: this will display an explanation for each argument, then shut the bot down without signing in to twitter
+* `-h`, `-help`: this will display an explanation for each argument, then shut the bot down without signing in to twitter
 * `-f <int>`: sets tweet frequency (in minutes), overriding the default 60
 * `-m <1-4>`: sets the mode
   * ebx mode
