@@ -1,17 +1,3 @@
-// require packages
-const fs = require('fs');
-const TwitterPackage = require('twitter');
-
-function int_rand(min, max) {
-	min = Math.ceil(min);
-	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min)) + min; // the maximum is exclusive and the minimum is inclusive
-}
-
-const randbool = Math.random() < 0.75; // returns bool: 25% true cases, 75% false cases
-const msconv = 60000; // multiply x minutes with msconv to get x in milliseconds
-var freq = 60;
-
 const parg = require('./parg'); // custom-written script to parse command-line arguments
 const args = parg.parg(process.argv); // parse arguments
 
@@ -36,6 +22,20 @@ if(args.h == true || args.help == true) {
 	console.log("-h, -help\tdisplays help");
 	process.exit();
 }
+
+// require packages
+const fs = require('fs');
+const TwitterPackage = require('twitter');
+
+function int_rand(min, max) {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min)) + min; // the maximum is exclusive and the minimum is inclusive
+}
+
+const randbool = Math.random() < 0.75; // returns bool: 25% true cases, 75% false cases
+const msconv = 60000; // multiply x minutes with msconv to get x in milliseconds
+var freq = 60;
 
 // check for -f argument, sanitise and parse as int, discard if impossible, if -f is valid, alter tweet frequency accordingly
 if(parg.sanitiseArgInt(args.f) != false)
