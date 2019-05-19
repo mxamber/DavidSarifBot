@@ -15,7 +15,8 @@ Running the bot is pretty simple. After creating a directory to download it into
 
 ### command-line arguments
 * `-h`, `-help`: this will display an explanation for each argument, then shut the bot down without signing in to twitter
-* `-f <int>`: sets tweet frequency (in minutes), overriding the default 60
+* `-f <float>`: sets tweet frequency (in minutes), overriding the default 60
+* `-l <int>`: run the bot x number of times
 * `-m <1-4>`: sets the mode
   * ebx mode
   * unaltered quotes mode

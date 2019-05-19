@@ -35,11 +35,12 @@ function int_rand(min, max) {
 
 const randbool = Math.random() < 0.75; // returns bool: 25% true cases, 75% false cases
 const msconv = 60000; // multiply x minutes with msconv to get x in milliseconds
-var freq = 60;
+var freq = 60 * msconv;
+var iterations = 0; // upon startup, bot has run 0 times
 
-// check for -f argument, sanitise and parse as int, discard if impossible, if -f is valid, alter tweet frequency accordingly
-if(parg.sanitiseArgInt(args.f) != false)
-	freq = parg.sanitiseArgInt(args.f);
+// check for -f argument, sanitise and parse as float, discard if impossible, if -f is valid, alter tweet frequency accordingly
+if(parg.sanitiseArgFloat(args.f) != false)
+	freq = parg.sanitiseArgFloat(args.f) * msconv;
 
 // set up twitter access, unless -d (debug) flag is set
 if(args.d != true) {
@@ -47,14 +48,10 @@ if(args.d != true) {
 	var Twitter = new TwitterPackage(creds);
 }
 
-
-var iterations = 0;
-
 // get local time for console output
 function cTime() {
 	var d = new Date();
-	var curTime = d.toLocaleTimeString();
-	return curTime;
+	return d.toLocaleTimeString();
 }
 
 // actual tweet functionality
@@ -78,8 +75,9 @@ function bot_tweet(content) {
 
 // tweet composition
 function hourly_tweet(){
+	
 	fs.readFile(__dirname + "/quotes.json", function(err, data) {		
-		var quotes = JSON.parse(data);
+		var quotes = JSON.parse(data); // JSON is parsed again for each tweet to allow editing in-between posts
 		
 		
 		var twt_case = int_rand(1,11); // twt_case is between 1 and 10,
@@ -124,7 +122,13 @@ function hourly_tweet(){
 			}
 			
 			bot_tweet(quote);
-			iterations++;
+		}
+		
+		// increment iterations per tweet, check whether maximum number of tweets (as defined in -l flag) has been sent, shut down if yes
+		iterations++;
+		if(args.l && iterations >= args.l) {
+			console.log("[" + cTime() + " NOTIF] Ran " + args.l + " number of times, shutting down!");
+			process.exit();
 		}
 	});
 }
@@ -133,9 +137,9 @@ function hourly_tweet(){
 if(typeof args.msg == "string") {
 	if(args.msg.length > 280) {
 		// if the message exceeds 280 characters, no tweet will be sent and the error displayed
-		console.log("[ERROR] Character limit violated (" + args.msg.length + " characters). Could not post tweet.")
-		console.log("[PART1] " + args.msg.slice(0,280));
-		console.log("[PART2] " + args.msg.slice(280));
+		console.log("[" + cTime() + " ERROR] Character limit violated (" + args.msg.length + " characters). Could not post tweet.")
+		console.log("[" + cTime() + " PART1] " + args.msg.slice(0,280));
+		console.log("[" + cTime() + " PART2] " + args.msg.slice(280));
 		process.exit();
 	}
 	bot_tweet(args.msg.trim());
@@ -148,5 +152,5 @@ hourly_tweet();
 
 // regular tweets, unless -s (single post) flag is set
 if(typeof args.s == 'undefined') {
-	setInterval(hourly_tweet, freq * msconv);
+	setInterval(hourly_tweet, freq);
 }
