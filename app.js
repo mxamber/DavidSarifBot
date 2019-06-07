@@ -27,6 +27,24 @@ if(args.h == true || args.help == true) {
 const fs = require('fs');
 const TwitterPackage = require('twitter');
 
+// set up twitter access, unless -d (debug) flag is set
+if(args.d != true) {
+	var creds = require('./creds.json');
+	var Twitter = new TwitterPackage(creds);
+}
+
+// check authentication by requesting world-wide trends (an action requiring authentication)
+if(args.p) {
+	Twitter.get("trends/place", {id: 1}, function(error, response) {
+		if(error != true && response != undefined) {
+			console.log("[" + cTime() + " DEBUG] Successfully authenticated!");
+		} else {
+			console.log("[" + cTime() + " DEBUG] Authentication failed!");
+		}
+		process.exit();
+	});
+}
+
 function int_rand(min, max) {
 	min = Math.ceil(min);
 	max = Math.floor(max);
@@ -42,12 +60,6 @@ var iterations = 0; // upon startup, bot has run 0 times
 if(parg.sanitiseArgFloat(args.f) != false)
 	freq = parg.sanitiseArgFloat(args.f) * msconv;
 
-// set up twitter access, unless -d (debug) flag is set
-if(args.d != true) {
-	var creds = require('./creds.json');
-	var Twitter = new TwitterPackage(creds);
-}
-
 // get local time for console output
 function cTime() {
 	var d = new Date();
@@ -59,7 +71,9 @@ function bot_tweet(content) {
 	if(args.d == true) {
 		// if -d flag is set, activate debug mode
 		// debug mode posts to the console without actually tweeting
-		console.log("[" + cTime() + " DEBUGMODE] " + content);
+		console.log("[" + cTime() + " DEBUG] " + content);
+		return;
+	} else if(args.p == true) {
 		return;
 	} else {
 		console.log("[" + cTime() + " SARIFBOT] " + content);
