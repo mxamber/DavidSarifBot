@@ -34,16 +34,17 @@ if(args.d != true) {
 }
 
 // check authentication by requesting world-wide trends (an action requiring authentication)
-if(args.p) {
-	Twitter.get("trends/place", {id: 1}, function(error, response) {
-		if(error != true && response != undefined) {
+Twitter.get("trends/place", {id: 1}, function(error, response) {
+	if(error != true && response != undefined) {
+		if(args.p) {
 			console.log("[" + cTime() + " DEBUG] Successfully authenticated!");
-		} else {
-			console.log("[" + cTime() + " DEBUG] Authentication failed!");
+			process.exit();
 		}
+	} else {
+		console.log("[" + cTime() + " DEBUG] Authentication failed!");
 		process.exit();
-	});
-}
+	}
+});
 
 function int_rand(min, max) {
 	min = Math.ceil(min);
