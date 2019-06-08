@@ -25,6 +25,7 @@ Running the bot is pretty simple. After creating a directory to download it into
 * `-s`: this will run the bot a single time, then shut it down
 * `-msg <string>`: this will send <string> as a tweet, then shut down, overriding `-f`, `-m` and `-s`
 * `-d`: debug mode, will print tweets to console without sending them
+* `-p`: ping. will check auth data with twitter, then shut down, overriding other flags.
 
 ## The dependencies
 * [node-twitter](https://github.com/desmondmorris/node-twitter): unofficial twitter API package
