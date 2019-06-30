@@ -57,6 +57,12 @@ const msconv = 60000; // multiply x minutes with msconv to get x in milliseconds
 var freq = 60 * msconv;
 var iterations = 0; // upon startup, bot has run 0 times
 
+// prevent usual bot behaviour if -msg flag is set
+var shutdown = false;
+if(args.msg) {
+	shutdown = true;
+}
+
 // check for -f argument, sanitise and parse as float, discard if impossible, if -f is valid, alter tweet frequency accordingly
 if(parg.sanitiseArgFloat(args.f) != false)
 	freq = parg.sanitiseArgFloat(args.f) * msconv;
@@ -68,7 +74,7 @@ function cTime() {
 }
 
 // actual tweet functionality
-function bot_tweet(content) {
+function bot_tweet(content, shutdown=false) {
 	if(args.d == true) {
 		// if -d flag is set, activate debug mode
 		// debug mode posts to the console without actually tweeting
@@ -76,14 +82,17 @@ function bot_tweet(content) {
 		return;
 	} else if(args.p == true) {
 		return;
-	} else {
-		console.log("[" + cTime() + " SARIFBOT] " + content);
 	}
+	console.log("[" + cTime() + " SARIFBOT] " + content);
 	
 	// post status to twitter
 	Twitter.post('statuses/update', {status: content},  function(error, tweet, response){
 		if(error){
 			console.log("[" + cTime() + "] " + error);
+		}
+		
+		if(shutdown==true) {
+			process.exit();
 		}
 	});
 }
@@ -157,13 +166,16 @@ if(typeof args.msg == "string") {
 		console.log("[" + cTime() + " PART2] " + args.msg.slice(280));
 		process.exit();
 	}
-	bot_tweet(args.msg.trim());
-	process.exit();
+	bot_tweet(args.msg.trim(), true);
+} else if(args.msg && typeof args.msg != "string") {
+	console.log("[" + cTime() + " ERROR] No string argument!");
 }
 
 
 // initial tweet
-hourly_tweet();
+if(shutdown == false) {
+	hourly_tweet();
+}
 
 // regular tweets, unless -s (single post) flag is set
 if(typeof args.s == 'undefined') {
