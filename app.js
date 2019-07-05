@@ -31,20 +31,21 @@ const TwitterPackage = require('twitter');
 if(args.d != true) {
 	var creds = require('./creds.json');
 	var Twitter = new TwitterPackage(creds);
-}
-
-// check authentication by requesting world-wide trends (an action requiring authentication)
-Twitter.get("trends/place", {id: 1}, function(error, response) {
-	if(error != true && response != undefined) {
-		if(args.p) {
-			console.log("[" + cTime() + " DEBUG] Successfully authenticated!");
+	
+	// check authentication by requesting world-wide trends (an action requiring authentication)
+	Twitter.get("trends/place", {id: 1}, function(error, response) {
+		if(error != true && response != undefined) {
+			if(args.p) {
+				console.log("[" + cTime() + " DEBUG] Successfully authenticated!");
+				process.exit();
+			}
+		} else {
+			console.log("[" + cTime() + " DEBUG] Authentication failed!");
 			process.exit();
 		}
-	} else {
-		console.log("[" + cTime() + " DEBUG] Authentication failed!");
-		process.exit();
-	}
-});
+	});
+}
+
 
 function int_rand(min, max) {
 	min = Math.ceil(min);
@@ -52,7 +53,6 @@ function int_rand(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min; // the maximum is exclusive and the minimum is inclusive
 }
 
-const randbool = Math.random() < 0.75; // returns bool: 25% true cases, 75% false cases
 const msconv = 60000; // multiply x minutes with msconv to get x in milliseconds
 var freq = 60 * msconv;
 var iterations = 0; // upon startup, bot has run 0 times
@@ -86,7 +86,7 @@ function bot_tweet(content, shutdown=false) {
 	console.log("[" + cTime() + " SARIFBOT] " + content);
 	
 	// post status to twitter
-	Twitter.post('statuses/update', {status: content},  function(error, tweet, response){
+	Twitter.post('statuses/update', {status: content}, function(error, tweet, response){
 		if(error){
 			console.log("[" + cTime() + "] " + error);
 		}
@@ -135,17 +135,42 @@ function hourly_tweet(){
 		} else if (twt_case > 1 && twt_case < 6) {
 			bot_tweet(quotes.quotes[int_rand(0,quotes.quotes.length)]);
 		} else if (twt_case > 5 && twt_case < 11) {
+			
+			
 			var quote1 = quotes.lecture.situation[int_rand(0,quotes.lecture.situation.length)];
-			var quote2 = quotes.lecture.directive[int_rand(0,quotes.lecture.directive.length)];
-			var quote = quote1 + " " + quote2;
-			if(randbool) {
-				var quote3 = quote + " " + quotes.lecture.mystery[int_rand(0,quotes.lecture.mystery.length)];
-				if(quote3.length <= 280) {
+			
+			
+			var quote2 = "";
+			if(Math.random() > 0.7) {
+				quote2 = quotes.lecture.directive[int_rand(0,quotes.lecture.directive.length)];
+			} else if(Math.random > 0.5) {
+				quote2 = "Sarif out.";
+			}
+			
+			
+			if(Math.random() > 0.5) {
+				quote = quote1 + " " + quote2;
+			} else {
+				quote = quote2 + " " + quote1;
+			}
+			
+			quote = quote.trim();
+			
+			if(Math.random() > 0.6) {
+				var quote3 = quotes.lecture.mystery[int_rand(0,quotes.lecture.mystery.length)];
+				
+				if(Math.random() > 0.5) {
+					quote = quote + " " + quote3;
+				} else {
+					quote = quote3 + " " + quote;
+				}
+				
+				if(quote.length > 280) {
 					quote = quote3;
 				}
 			}
 			
-			bot_tweet(quote);
+			bot_tweet(quote.trim());
 		}
 		
 		// increment iterations per tweet, check whether maximum number of tweets (as defined in -l flag) has been sent, shut down if yes

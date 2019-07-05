@@ -20,7 +20,12 @@
 			"Yeah... as an ex-cop, I guess you would.",
 			"I guess I can see why you'd think that... given everything you've been through recently.",
 			"I guess I hadn't considered that... but I still don't know that you need to.",
-			"Your concerns about the data being compromised won't be an issue."
+			"Your concerns about the data being compromised won't be an issue.",
+			"Megan, we're leaving for D-C in—",
+			"I want to go over your security plans for Washington before we leave.",
+			"We have to actually be in Washington before you can dazzle all those federally-appointed know-it-alls.",
+			"I want Hugh Darrow. In Washington. By my side.",
+			"Senators love this guy."
 		],
 		"directive": [
 			"And don't forget to keep track of your expenses, or Athena will be on my ass.",
@@ -41,7 +46,8 @@
 			"I'll send the files to your computer so you can see what he dug up.",
 			"Find out who's giving the orders, and get back to me.",
 			"Tell them their doctors created a virus that only affects augmented people.",
-			"Time to figure out how to destroy the Illuminati's biochips and move on."
+			"Time to figure out how to destroy the Illuminati's biochips and move on.",
+			"You and your team ready to go, Megan?"
 		],
 		"mystery": [
 			"Someone is pulling strings to keep us in the dark.",
@@ -58,7 +64,10 @@
 			"It will give us time, son.",
 			"Please, son. You have to stay with me on this.",
 			"The truth is, I've had a lot of other things on my mind.",
-			"Because that's what's really important, isn't it? The future?"
+			"Because that's what's really important, isn't it? The future?",
+			"Well make it snappy.",
+			"I don't care what it takes!",
+			"The hearings will go much smoother with him there."
 		]
 	},
 	"quotes": [
@@ -107,6 +116,8 @@
 		"Now that I've shared this much with you, we can't be blinded by a misguided morality. I'm trying to secure our future here!",
 		"That... won't really be an issue, ass long as we stay strong and together to help this little family of ours.",
 		"The truth is, I've had a lot of holes on my mind.",
-		"Looks like he was being chatty with a back entrance..."
+		"Looks like he was being chatty with a back entrance...",
+		"I don't care what it takes — I want Hugh Darrow!",
+		"Swing by my office some time if you can."
 	]
 }
