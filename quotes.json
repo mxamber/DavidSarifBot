@@ -25,7 +25,12 @@
 			"I want to go over your security plans for Washington before we leave.",
 			"We have to actually be in Washington before you can dazzle all those federally-appointed know-it-alls.",
 			"I want Hugh Darrow. In Washington. By my side.",
-			"Senators love this guy."
+			"Senators love this guy.",
+			"Big day for us tomorrow! Everything in place?",
+			"How's our girl holding up?",
+			"All she has to do is show them her research.",
+			"It's safer, and easier than anything Hugh Darrow ever did!",
+			"We better not take any chances. Not tonight."
 		],
 		"directive": [
 			"And don't forget to keep track of your expenses, or Athena will be on my ass.",
@@ -47,7 +52,11 @@
 			"Find out who's giving the orders, and get back to me.",
 			"Tell them their doctors created a virus that only affects augmented people.",
 			"Time to figure out how to destroy the Illuminati's biochips and move on.",
-			"You and your team ready to go, Megan?"
+			"You and your team ready to go, Megan?",
+			"She explain it to you?",
+			"Use my elevator to get down there.",
+			"Let me know what you find.",
+			"Hurry up, Adam. The code is 0451."
 		],
 		"mystery": [
 			"Someone is pulling strings to keep us in the dark.",
@@ -67,12 +76,14 @@
 			"Because that's what's really important, isn't it? The future?",
 			"Well make it snappy.",
 			"I don't care what it takes!",
-			"The hearings will go much smoother with him there."
+			"The hearings will go much smoother with him there.",
+			"It's incredible!",
+			"You know the code?"
 		]
 	},
 	"quotes": [
 		"57656c6c20736f6d656f6e65207468696e6b7320746865792772652061206861636b6b65722e202d2d4650",
-		"Adam! What the hell were you thinking!",
+		"Adam! What the hell were you thinking!", 
 		"Adam! You're there. Good. Good.",
 		"Did I what now?",
 		"Adam! Talk to me.",
@@ -97,7 +108,9 @@
 		"Now Megan understood that. It's why she suggested I hire you in the first place - to help this little family of ours survive.",
 		"She doesn't! I mean, er, not directly...",
 		"Megan pointed me in a direction and I followed up on it - that's all.",
-		"Adam! Of course I trust you, son! And it's not that I'm afraid to tell you the truth. It' just that... honestly... I'm afraid you'll take it the wrong way."
+		"Adam! Of course I trust you, son! And it's not that I'm afraid to tell you the truth. It' just that... honestly... I'm afraid you'll take it the wrong way.",
+		"It's incredible! All those purists out there, accusing us of tampering with the natural order, when all Megan's done is figure out how to unlock the potential that exists within our own DNA!",
+		"[ENVIRONMENTAL MALFUNCTION, LABORATORY SUB-SECTION SIX. ALL LAB CHIEFS, PLEASE REPORT IN.]"
 	],
 	"bonkers": [
 		"It's fruit flies, Adam, fucking fully-equipped Area 51, deadly, dangerous fruit flies!",
@@ -118,6 +131,10 @@
 		"The truth is, I've had a lot of holes on my mind.",
 		"Looks like he was being chatty with a back entrance...",
 		"I don't care what it takes — I want Hugh Darrow!",
-		"Swing by my office some time if you can."
+		"Swing by my office some time if you can.",
+		"It's incredible!",
+		"Accusing us of tampering with the natural order...",
+		"It's safer, and easier than anything!",
+		"We better not take any chances. Use my elevator tonight."
 	]
 }

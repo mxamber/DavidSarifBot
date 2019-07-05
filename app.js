@@ -137,11 +137,16 @@ function hourly_tweet(){
 		} else if (twt_case > 5 && twt_case < 11) {
 			
 			
-			var quote1 = quotes.lecture.situation[int_rand(0,quotes.lecture.situation.length)];
+			var quote1 = "";
+			if(Math.random() > 0.3) {
+				quote1 = quotes.lecture.situation[int_rand(0,quotes.lecture.situation.length)];
+			} else {
+				quote1 = quotes.lecture.directive[int_rand(0,quotes.lecture.directive.length)];
+			}
 			
 			
 			var quote2 = "";
-			if(Math.random() > 0.7) {
+			if(Math.random() > 0.4) {
 				quote2 = quotes.lecture.directive[int_rand(0,quotes.lecture.directive.length)];
 			} else if(Math.random > 0.5) {
 				quote2 = "Sarif out.";
