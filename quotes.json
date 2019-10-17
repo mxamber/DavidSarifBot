@@ -30,7 +30,10 @@
 			"How's our girl holding up?",
 			"All she has to do is show them her research.",
 			"It's safer, and easier than anything Hugh Darrow ever did!",
-			"We better not take any chances. Not tonight."
+			"We better not take any chances. Not tonight.",
+			
+			"Frank's asked about you, by the way.",
+			"We've had a situation in the Tech Lab this morning."
 		],
 		"directive": [
 			"And don't forget to keep track of your expenses, or Athena will be on my ass.",
@@ -56,7 +59,11 @@
 			"She explain it to you?",
 			"Use my elevator to get down there.",
 			"Let me know what you find.",
-			"Hurry up, Adam. The code is 0451."
+			"Hurry up, Adam. The code is 0451.",
+			
+			"Better go check that out.",
+			"You'll have to ask Athena about that.",
+			"You'll have to ask Frank about that."
 		],
 		"mystery": [
 			"Someone is pulling strings to keep us in the dark.",
@@ -78,7 +85,14 @@
 			"I don't care what it takes!",
 			"The hearings will go much smoother with him there.",
 			"It's incredible!",
-			"You know the code?"
+			"You know the code?",
+			
+			
+			"Who's there?",
+			"You wouldn't—",
+			"It's us against them now.",
+			"CPD have been unusually quiet about this.",
+			"This is a matter of utmost importance, and I expect you to treat it like one."
 		]
 	},
 	"quotes": [
@@ -90,8 +104,8 @@
 		"We can build wings if we wish to, and leave the cradle behind. The only limitations to where our flight will take us are our will and our intellect.",
 		"Well, the police are saying he's not. They're refusing to let me see the body, no matter how much money I threaten to pull from their retirement fund.",
 		"We will rebuild. We will pick up the scattered pieces of our lives and their work, and continue to move forward.",
-		"The management appreciates that you all have been working long hours in the drive to fulfill outstanding contracts. We recognize your increased efforts, and we thank you for your unswerving dedication to getting the job done with pride. --AM",
-		"We are attempting to fill recent vacancies as quickly as possible, but finding talented researchers who can live up to the high standards this company maintains is no easy task. If you know any qualified candidates - please, send them my way. --AM",
+		"The management appreciates that you all have been working long hours in the drive to fulfill outstanding contracts. We recognize your increased efforts, and we thank you for your unswerving dedication to getting the job done with pride. —AM",
+		"We are attempting to fill recent vacancies as quickly as possible, but finding talented researchers who can live up to the high standards this company maintains is no easy task. If you know any qualified candidates - please, send them my way. —AM",
 		"Right now, this company is on the brink of something phenomenal, something that can change mankind forever!",
 		"And now that I've shared this much with you, I have to ask how your knowing the fine details will keep the rest of us any more secure.",
 		"Adam! Oh, thank God you came! I've got wounded here. We'll have to move them first.",
@@ -135,6 +149,7 @@
 		"It's incredible!",
 		"Accusing us of tampering with the natural order...",
 		"It's safer, and easier than anything!",
-		"We better not take any chances. Use my elevator tonight."
+		"We better not take any chances. Use my elevator tonight.",
+		"The elevator code is 6969."
 	]
 }

@@ -146,9 +146,9 @@ function hourly_tweet(){
 			
 			
 			var quote2 = "";
-			if(Math.random() > 0.4) {
+			if(Math.random() > 0.3) {
 				quote2 = quotes.lecture.directive[int_rand(0,quotes.lecture.directive.length)];
-			} else if(Math.random > 0.5) {
+			} else if(Math.random > 0.4) {
 				quote2 = "Sarif out.";
 			}
 			
@@ -161,7 +161,7 @@ function hourly_tweet(){
 			
 			quote = quote.trim();
 			
-			if(Math.random() > 0.6) {
+			if(Math.random() > 0.5) {
 				var quote3 = quotes.lecture.mystery[int_rand(0,quotes.lecture.mystery.length)];
 				
 				if(Math.random() > 0.5) {
