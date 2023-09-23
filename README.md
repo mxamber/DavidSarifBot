@@ -3,6 +3,8 @@ A lil twitter bot I made, working an \_ebooks idea into a roleplay account. ~~Li
 
 **Considering the hellscape Twitter has become,** a migration to the Fediverse is planned and being prepared, I'll be working on porting the code whenever I have the time. In preparation, the existing files in the repo have been moved into the /twitter/ folder.
 
+A not yet automated account can be found at [@DavidSarif@botsin.space](https://botsin.space/@DavidSarif).
+
 ## The idea
 Inspired by several "ebooks"&zwj;<sup>1</sup> accounts, I decided to create a similar account roleplaying as David Sarif from the popular Deus Ex: Human Revolution game. However, sticking with the roleplaying theme, I wanted this account to form sentences that actually make sense, or are at least grammatically correct.
 
