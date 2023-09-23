@@ -1,8 +1,10 @@
 # DavidSarifBot
-A lil twitter bot I made, working an \_ebooks idea into a roleplay account. Live account can be found at [@DavidSarif](https://twitter.com/DavidSarif)
+A lil twitter bot I made, working an \_ebooks idea into a roleplay account. ~~Live~~ A no longer active account can be found at [@DavidSarif](https://twitter.com/DavidSarif) on Twitter.
+
+**Considering the hellscape Twitter has become,** a migration to the Fediverse is planned and being prepared, I'll be working on porting the code whenever I have the time. In preparation, the existing files in the repo have been moved into the /twitter/ folder.
 
 ## The idea
-Inspired by several "ebooks"<sup>1</sup> accounts, I decided to create a similar account roleplaying as David Sarif from the popular Deus Ex: Human Revolution game. However, sticking with the roleplaying theme, I wanted this account to form sentences that actually make sense, or are at least grammatically correct.
+Inspired by several "ebooks"&zwj;<sup>1</sup> accounts, I decided to create a similar account roleplaying as David Sarif from the popular Deus Ex: Human Revolution game. However, sticking with the roleplaying theme, I wanted this account to form sentences that actually make sense, or are at least grammatically correct.
 
 ## The functionality
 The bot's primary functionality consists of two files: a JSON file containing different quotes from all throughout the game, and a nodejs script that establishes a connection to twitter, remixes the quotes into new ones in different modes, and then posts them as tweets. Unlike conventional ebx bots, that mix sentences into new sentences, sometimes making for abrupt changes mid-sentence, this one keeps the individual sentences and instead combines a few sentences one after another to make for fun, never-happened, out-of-context quotes.
@@ -20,7 +22,7 @@ Running the bot is pretty simple. After creating a directory to download it into
 * `-m <1-4>`: sets the mode
   * ebx mode
   * unaltered quotes mode
-  * bonkers mode<sup>2</sup>
+  * bonkers mode&zwj;<sup>2</sup>
   * valentine's day mode
 * `-s`: this will run the bot a single time, then shut it down
 * `-msg <string>`: this will send <string> as a tweet, then shut down, overriding `-f`, `-m` and `-s`
